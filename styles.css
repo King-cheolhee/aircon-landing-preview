@@ -214,3 +214,12 @@ h3 { font-size: 1.125rem; line-height: 1.4; font-weight: 800; }
 .note-list b { margin-right: .4em; }
 .faq-end { margin: 18px 0 0; }
 .foot-note { margin-top: 14px; color: var(--c-ink-2); }
+
+/* v2 additions: move-fee link, prep list, base-included line */
+.service-go { margin-top: 4px; font-style: normal; font-weight: 700; color: var(--c-primary); }
+.price-summary { margin: 8px 0 16px; }
+.prep { max-width: 640px; margin: 20px auto; padding: 18px 20px; text-align: left; background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius); }
+.prep ol { margin: 10px 0; padding-left: 1.3em; list-style: decimal; display: grid; gap: 4px; }
+.prep-ask { margin-top: 10px; color: var(--c-ink-2); }
+.prep-ask b { margin-right: .4em; color: var(--c-ink); }
+.inc-line { margin: 12px 0; font-weight: 700; }
