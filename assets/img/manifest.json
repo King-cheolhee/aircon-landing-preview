@@ -1,0 +1,154 @@
+{
+  "images": [
+    {
+      "id": "hero",
+      "cut": 1,
+      "alt": "밝은 한국 아파트 거실 벽에 20대 후반 설치 기사 두 명이 벽걸이 에어컨 실내기를 거는 모습 (AI로 만든 연출 이미지)",
+      "ai": true,
+      "w": 1600,
+      "h": 900,
+      "avif": [
+        "assets/img/hero-640.avif 640w",
+        "assets/img/hero-1024.avif 1024w",
+        "assets/img/hero-1600.avif 1600w"
+      ],
+      "webp": [
+        "assets/img/hero-640.webp 640w",
+        "assets/img/hero-1024.webp 1024w",
+        "assets/img/hero-1600.webp 1600w"
+      ],
+      "fallback": "assets/img/hero-1024.webp"
+    },
+    {
+      "id": "hero_m",
+      "cut": 2,
+      "alt": "밝은 한국 아파트 거실 벽에 20대 후반 설치 기사 두 명이 벽걸이 에어컨 실내기를 거는 모습(세로 구도) (AI로 만든 연출 이미지)",
+      "ai": true,
+      "w": 941,
+      "h": 1672,
+      "avif": [
+        "assets/img/hero_m-640.avif 640w",
+        "assets/img/hero_m-941.avif 941w"
+      ],
+      "webp": [
+        "assets/img/hero_m-640.webp 640w",
+        "assets/img/hero_m-941.webp 941w"
+      ],
+      "fallback": "assets/img/hero_m-941.webp"
+    },
+    {
+      "id": "system",
+      "cut": 3,
+      "alt": "빈 신축 아파트 거실 천장에 시스템에어컨 실내기를 설치하는 기사와 사다리를 잡아 주는 동료 (AI로 만든 연출 이미지)",
+      "ai": true,
+      "w": 1536,
+      "h": 1024,
+      "avif": [
+        "assets/img/system-640.avif 640w",
+        "assets/img/system-1024.avif 1024w",
+        "assets/img/system-1536.avif 1536w"
+      ],
+      "webp": [
+        "assets/img/system-640.webp 640w",
+        "assets/img/system-1024.webp 1024w",
+        "assets/img/system-1536.webp 1536w"
+      ],
+      "fallback": "assets/img/system-1024.webp"
+    },
+    {
+      "id": "outdoor",
+      "cut": 4,
+      "alt": "한국 아파트 실외기실에서 실외기와 보온재로 마감한 냉매 배관을 점검하는 설치 기사 (AI로 만든 연출 이미지)",
+      "ai": true,
+      "w": 1536,
+      "h": 1024,
+      "avif": [
+        "assets/img/outdoor-640.avif 640w",
+        "assets/img/outdoor-1024.avif 1024w",
+        "assets/img/outdoor-1536.avif 1536w"
+      ],
+      "webp": [
+        "assets/img/outdoor-640.webp 640w",
+        "assets/img/outdoor-1024.webp 1024w",
+        "assets/img/outdoor-1536.webp 1536w"
+      ],
+      "fallback": "assets/img/outdoor-1024.webp"
+    },
+    {
+      "id": "vacuum",
+      "cut": 5,
+      "alt": "실외기 서비스 밸브에 매니폴드 게이지와 진공펌프를 연결해 진공 작업을 하는 장갑 낀 손 (AI로 만든 연출 이미지)",
+      "ai": true,
+      "w": 1536,
+      "h": 1024,
+      "avif": [
+        "assets/img/vacuum-640.avif 640w",
+        "assets/img/vacuum-1024.avif 1024w",
+        "assets/img/vacuum-1536.avif 1536w"
+      ],
+      "webp": [
+        "assets/img/vacuum-640.webp 640w",
+        "assets/img/vacuum-1024.webp 1024w",
+        "assets/img/vacuum-1536.webp 1536w"
+      ],
+      "fallback": "assets/img/vacuum-1024.webp"
+    },
+    {
+      "id": "flare",
+      "cut": 6,
+      "alt": "배관 이음 너트를 공구로 조이는 기사 (AI로 만든 연출 이미지)",
+      "ai": true,
+      "w": 1536,
+      "h": 1024,
+      "avif": [
+        "assets/img/flare-640.avif 640w",
+        "assets/img/flare-1024.avif 1024w",
+        "assets/img/flare-1536.avif 1536w"
+      ],
+      "webp": [
+        "assets/img/flare-640.webp 640w",
+        "assets/img/flare-1024.webp 1024w",
+        "assets/img/flare-1536.webp 1536w"
+      ],
+      "fallback": "assets/img/flare-1024.webp"
+    },
+    {
+      "id": "cleaning",
+      "cut": 7,
+      "alt": "벽걸이 에어컨을 분해해 청소하면서 비닐 커버로 벽과 바닥을 보호한 모습 (AI로 만든 연출 이미지)",
+      "ai": true,
+      "w": 1536,
+      "h": 1024,
+      "avif": [
+        "assets/img/cleaning-640.avif 640w",
+        "assets/img/cleaning-1024.avif 1024w",
+        "assets/img/cleaning-1536.avif 1536w"
+      ],
+      "webp": [
+        "assets/img/cleaning-640.webp 640w",
+        "assets/img/cleaning-1024.webp 1024w",
+        "assets/img/cleaning-1536.webp 1536w"
+      ],
+      "fallback": "assets/img/cleaning-1024.webp"
+    },
+    {
+      "id": "move",
+      "cut": 8,
+      "alt": "철거한 에어컨 실내기를 담요로 감싸 두 명이 함께 옮기는 모습 (AI로 만든 연출 이미지)",
+      "ai": true,
+      "w": 1536,
+      "h": 1024,
+      "avif": [
+        "assets/img/move-640.avif 640w",
+        "assets/img/move-1024.avif 1024w",
+        "assets/img/move-1536.avif 1536w"
+      ],
+      "webp": [
+        "assets/img/move-640.webp 640w",
+        "assets/img/move-1024.webp 1024w",
+        "assets/img/move-1536.webp 1536w"
+      ],
+      "fallback": "assets/img/move-1024.webp"
+    }
+  ]
+}

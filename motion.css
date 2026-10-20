@@ -1,0 +1,64 @@
+/* Install-steps timeline (8 steps). Default (no JS, reduced motion, stopped) = the finished scene.
+   Time animation is attached only while .mf.is-on is set (motion.js replays it).
+   Rules: text elements keep opacity >= 0.45 and move 12px or less; big moves/fades are on text-free parts only (keyframes named am-fx-*).
+   Individual translate/scale properties instead of transform; keyframes are prefixed am-; the last keyframe state equals the element's own style.
+   Cards never use overflow:hidden (rings would be clipped). Each step runs 1.2s: i * 1.2s delay, whole loop about 9.6s. */
+.mf { --e: cubic-bezier(0.2, 0.8, 0.2, 1); --gap: 14px; margin-top: 20px; }
+.mf-list { display: grid; gap: var(--gap); grid-template-columns: minmax(0, 1fr); }
+.mf-step {
+  position: relative; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px 12px; padding: 16px;
+  background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius);
+}
+.mf-badge {
+  position: relative; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%;
+  background: var(--c-primary); color: var(--c-primary-ink); font-weight: 800;
+}
+.mf-badge::after { content: ""; position: absolute; inset: -4px; border: 2px solid var(--c-primary); border-radius: 50%; opacity: 0; scale: 1.7; }
+.mf-step > .ic { justify-self: end; width: 28px; height: 28px; color: var(--c-primary); }
+.mf-step h3 { grid-column: 1 / -1; }
+.mf-step p { grid-column: 1 / -1; color: var(--c-ink-2); }
+.mf-step .mf-extra { color: var(--c-primary); font-weight: 700; }
+/* link between steps: grows from one card to the next */
+.mf-step::after { content: ""; position: absolute; left: 34px; top: 100%; width: 2px; height: var(--gap); background: var(--c-primary); transform-origin: top; }
+.mf-step:last-child::after { display: none; }
+.mf-ctl { margin-top: 14px; text-align: center; }
+.mf-btn {
+  min-height: 44px; padding: 0 20px; border: 1px solid var(--c-primary); border-radius: 999px;
+  background: var(--c-surface); color: var(--c-primary); font: inherit; font-weight: 700; cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .mf-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mf-step::after { display: none; }
+}
+@media (min-width: 900px) {
+  .mf { --gap: 20px; }
+  .mf-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .mf-step::after { display: block; left: 100%; top: 34px; width: var(--gap); height: 2px; transform-origin: left; }
+  .mf-step:nth-child(4n)::after { display: none; }
+}
+
+/* keyframes: the current step lifts, glows, then settles back to its own style (earlier steps stay solid) */
+@keyframes am-act {
+  0% { opacity: 0.45; translate: 0 8px; }
+  20%, 80% { opacity: 1; translate: 0 0; box-shadow: 0 0 0 2px var(--c-primary); }
+}
+@keyframes am-fx-growy { from { scale: 1 0; } }
+@keyframes am-fx-growx { from { scale: 0 1; } }
+@keyframes am-fx-ring { 0% { opacity: 0; scale: 0.6; } 20% { opacity: 0.9; scale: 0.95; } 100% { opacity: 0; scale: 1.7; } }
+@keyframes am-fx-pop { 0% { scale: 0.6; } 60% { scale: 1.18; } }
+
+/* playing state: every delay is index * 1.2s (--i is set per step in the markup) */
+.mf.is-on .mf-step { animation: am-act 1.2s ease-out backwards; animation-delay: calc(var(--i) * 1.2s); }
+.mf.is-on .mf-step > .ic { animation: am-fx-pop 0.5s var(--e) backwards; animation-delay: calc(var(--i) * 1.2s + 0.1s); }
+.mf.is-on .mf-badge::after { animation: am-fx-ring 0.6s ease-out both; animation-delay: calc(var(--i) * 1.2s); }
+.mf.is-on .mf-step::after { animation: am-fx-growy 0.5s ease-out backwards; animation-delay: calc(var(--i) * 1.2s + 0.7s); }
+@media (min-width: 900px) {
+  .mf.is-on .mf-step::after { animation-name: am-fx-growx; }
+}
+
+/* off screen or hidden tab: hold the first scene; reduced motion: no animation at all */
+.mf.is-paused *, .mf.is-paused *::before, .mf.is-paused *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .mf *, .mf *::before, .mf *::after { animation: none !important; }
+}
